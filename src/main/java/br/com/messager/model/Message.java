@@ -1,18 +1,19 @@
 package br.com.messager.model;
 
+import java.time.LocalDateTime;
 import java.util.Calendar;
 
 public class Message {
 
     private Integer id;
     private Conversation conversation;
-    private Calendar date;
+    private LocalDateTime date;
     private MessageType type;
     private User sender;
     private String messagePart;
 
 
-    public Message(Conversation conversation, Calendar date, User sender, MessageType messageType, String messagePart) {
+    public Message(Conversation conversation, LocalDateTime date, User sender, MessageType messageType, String messagePart) {
         this.conversation = conversation;
         this.date = date;
         this.sender = sender;
@@ -28,8 +29,16 @@ public class Message {
         return conversation;
     }
 
-    public Calendar getDate() {
+    public LocalDateTime getDate() {
         return date;
+    }
+
+    @Override
+    public String toString() {
+        return  date + " - "
+                + sender.getName() + ": "
+                + messagePart
+                ;
     }
 }
 

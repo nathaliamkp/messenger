@@ -12,7 +12,9 @@ public class UserTest {
         User u1 = new User("Luis", "1111111");
         User u2 = new User("Laura", "222222");
 
-        u1.createPrivateConversation(u2);
+        PrivateConversation privateConversation = (PrivateConversation) u1.createPrivateConversation(u2);
+
+        assertEquals(u1, privateConversation.getUserOwner());
 
     }
 
@@ -23,8 +25,9 @@ public class UserTest {
 
         Conversation conversation = u1.createPrivateConversation(u2);
 
-        u1.sendMessage(conversation, "Olá tudo bem?", "audio");
+        Message message = u1.sendMessage(conversation, "Olá tudo bem?", "AUDIO");
 
+        assertEquals();
 
     }
 

@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 public class PrivateConversation extends Conversation {
 
+    private Integer id;
     private User guest;
 
     public PrivateConversation(User userOwner, Calendar createDate, User guest) {

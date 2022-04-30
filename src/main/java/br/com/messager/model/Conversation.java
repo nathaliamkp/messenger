@@ -1,11 +1,10 @@
 package br.com.messager.model;
 
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.List;
 
 public abstract class Conversation {
-
-        private Integer id;
         private User userOwner;
         private Calendar createDate;
 
@@ -16,11 +15,19 @@ public abstract class Conversation {
         }
 
         protected Message createMessage(User sender, String messagePart, MessageType messageType){
-            Message message = new Message(this, Calendar.getInstance(), sender, messageType, messagePart);
+            Message message = new Message(this, LocalDateTime.now(), sender, messageType, messagePart);
             return message;
         }
 
-        protected List<Message> messages(){
+    public User getUserOwner() {
+        return userOwner;
+    }
+
+    public Calendar getCreateDate() {
+        return createDate;
+    }
+
+    protected List<Message> messages(){
             return null;
         }
 
