@@ -5,11 +5,11 @@ import java.util.Calendar;
 import java.util.List;
 
 public abstract class Conversation {
+        private Integer id;
         private User userOwner;
         private Calendar createDate;
 
         public Conversation(User userOwner, Calendar createDate) {
-
             this.userOwner = userOwner;
             this.createDate = createDate;
         }
@@ -27,7 +27,8 @@ public abstract class Conversation {
         return createDate;
     }
 
-    protected List<Message> messages(){
+    protected List<Message> getMessages(Conversation conversation){
+
             return null;
         }
 

@@ -1,10 +1,9 @@
 package br.com.messager.model;
 
 import java.util.Calendar;
+import java.util.List;
 
 public class PrivateConversation extends Conversation {
-
-    private Integer id;
     private User guest;
 
     public PrivateConversation(User userOwner, Calendar createDate, User guest) {
@@ -12,9 +11,9 @@ public class PrivateConversation extends Conversation {
         this.guest = guest;
     }
 
+    @Override
+    protected List<Message> getMessages(Conversation conversation) {
 
-
-
-
-
+        return null;
+    }
 }

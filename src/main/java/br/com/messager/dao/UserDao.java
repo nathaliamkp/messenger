@@ -13,7 +13,7 @@ public class UserDao {
         this.em = em;
     }
 
-    public void save (User user) {
+    public void save(User user) {
         this.em.persist(user);
     }
 
